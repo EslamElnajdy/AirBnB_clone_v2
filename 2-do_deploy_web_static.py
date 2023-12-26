@@ -6,6 +6,7 @@ env.hosts = ["54.209.195.60", "100.26.168.126"]
 env.user = 'ubuntu'
 env.key_filename = '~/.ssh/id_rsa'
 
+
 def do_deploy(archive_path):
     """distributes an archive to the web servers"""
     if exists(archive_path) is False:
@@ -23,5 +24,6 @@ def do_deploy(archive_path):
         run("rm -rf /data/web_static/current")
         run("ln -s {}{}/ /data/web_static/current".format(path, no_ext))
         return True
-    except:
+    except Exception as e:
+        print(f"Error during deployment: {e}")
         return False
