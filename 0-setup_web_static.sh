@@ -4,9 +4,8 @@
 apt-get update
 apt-get install -y nginx
 
-mkdir -p /data/web_static/releases/test/
-mkdir -p /data/web_static/shared/
-echo "Mahmoud Salah" > /data/web_static/releases/test/index.html
+sudo mkdir -p /data/web_static/releases/test /data/web_static/shared
+echo "test data" > /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 chown -R ubuntu /data/
@@ -25,7 +24,7 @@ printf %s "server {
     }
 
     location /redirect_me {
-	return 301 https://github.com/mahmoudsalah296;
+	return 301 https://github.com/EslamElnajdy;
     }
 
     error_page 404 /404.html;
