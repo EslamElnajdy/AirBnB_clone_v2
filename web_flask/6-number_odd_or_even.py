@@ -46,7 +46,7 @@ def number_template_route(n):
         num_type = 'even'
     else:
         num_type = 'odd'
-    return render_template('6-number_odd_or_even.html', number=n, numberType=num_type)
+    return render_template('6-number_odd_or_even.html', number=n, T=num_type)
 
 
 if __name__ == '__main__':
